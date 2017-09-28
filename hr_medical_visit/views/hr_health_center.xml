@@ -1,0 +1,47 @@
+<odoo>
+        <!-- Health Center -->
+    <record id="hr_health_center_view_tree" model="ir.ui.view">
+        <field name="name">hr.health.center.view.tree</field>
+        <field name="model">hr.health.center</field>
+        <field name="arch" type="xml">
+            <tree name="Health Center">
+                <field name="name"/>
+                <field name="address_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_health_center_view_form" model="ir.ui.view">
+        <field name="name">hr.health.center.view.form</field>
+        <field name="model">hr.health.center</field>
+        <field name="arch" type="xml">
+            <form name="Health Center">
+                <group>
+                    <field name="name"/>
+                    <field name="address_id"/>
+                    <field name="company_relation_ids"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_health_center_tree" model="ir.actions.act_window">
+        <field name="name">Health Center</field>
+        <field name="res_model">hr.health.center</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+    <record id="health_center_search" model="ir.ui.view">
+       <field name="model">hr.health.center</field>
+        <field name="arch" type="xml">
+            <search string="Centre de Santé">
+          <field name="name" string="Name" domain="[()]"/>
+          <field name="address_id" string="Adresse" domain="[()]"/>
+        </search>
+       </field>
+    </record>
+    <menuitem id="menu_action_health_center"
+              action="action_hr_health_center_tree"
+              parent="hr.menu_hr_main" sequence="12"/>
+
+</odoo>

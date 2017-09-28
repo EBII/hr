@@ -1,0 +1,56 @@
+<odoo>
+
+    <!-- Legal Entity Health Center Relation -->
+    <record id="hr_health_center_company_relation_view_tree"
+            model="ir.ui.view">
+        <field name="name">hr.health.center.company.relation.view.tree
+        </field>
+        <field name="model">hr.health.center.company.relation</field>
+        <field name="arch" type="xml">
+            <tree name="Company - Health Center">
+                <field name="name"/>
+                <field name="company_ids"/>
+                <field name="health_center_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_health_center_company_relation_view_form"
+            model="ir.ui.view">
+        <field name="name">hr.health.center.company.relation.view.form
+        </field>
+        <field name="model">hr.health.center.company.relation</field>
+        <field name="arch" type="xml">
+            <form name="Legal Entity - Health Center">
+                <group>
+                    <field name="name"/>
+                    <field name="company_ids"/>
+                    <field name="health_center_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_health_center_company_relation_tree"
+            model="ir.actions.act_window">
+        <field name="name">Company - Health Center</field>
+        <field name="res_model">hr.health.center.company.relation</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+    <record id="hr.health_center_registration_search" model="ir.ui.view">
+        <field name="model">hr.health.center.company.relation</field>
+        <field name="arch" type="xml">
+            <search string="IMMATRICULATION">
+                <field name="name" string="Immatriculation" domain="[()]"/>
+                <field name="health_center_id" string="Health Center" domain="[()]"/>
+                <field name="company_ids" string="Company" domain="[()]"/>
+            </search>
+        </field>
+    </record>
+    <menuitem id="menu_action_health_center_company_relation"
+              name="Imatriculation Health Center"
+              action="action_hr_health_center_company_relation_tree"
+              parent="hr.menu_human_resources_configuration"/>
+
+</odoo>
