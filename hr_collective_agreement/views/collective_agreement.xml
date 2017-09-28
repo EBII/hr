@@ -1,0 +1,37 @@
+<odoo>
+    <!-- Collective Agreement -->
+    <record id="hr_collective_agreement_view_tree" model="ir.ui.view">
+        <field name="name">hr.collective.agreement.view.tree</field>
+        <field name="model">hr.collective.agreement</field>
+        <field name="arch" type="xml">
+            <tree name="Collective Agreement">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_collective_agreement_view_form" model="ir.ui.view">
+        <field name="name">hr.collective.agreement.view.form</field>
+        <field name="model">hr.collective.agreement</field>
+        <field name="arch" type="xml">
+            <form name="Collective Agreement">
+                <group>
+                    <field name="name"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hr_collective_agreement_tree"
+            model="ir.actions.act_window">
+        <field name="name">Collective Agreement</field>
+        <field name="res_model">hr.collective.agreement</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,graph</field>
+    </record>
+
+    <menuitem id="menu_action_collective_agreement"
+              action="action_hr_collective_agreement_tree"
+              parent="hr.menu_hr_root" sequence="6"/>/>
+
+</odoo>
