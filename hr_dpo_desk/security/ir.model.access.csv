@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_dpo_action,access_hr_dpo_action,model_hr_dpo_action,hrsol30_dpo.group_hr_dpo,1,0,0,0
+access_hr_dpo_treatment,access_hr_dpo_treatment,model_hr_dpo_treatment,hrsol30_dpo.group_hr_dpo,1,0,0,0
+access_hr_dpo_request,access_hr_dpo_request,model_hr_dpo_request,hrsol30_dpo.group_hr_dpo,1,0,0,0

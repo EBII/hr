@@ -1,0 +1,194 @@
+<odoo>
+    <record id="dpo_request_form" model="ir.ui.view">
+        <field name="model">hr.dpo.request</field>
+        <field name="arch" type="xml">
+            <form name="DPO Desk">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="service"/>
+                        <field name="employee"/>
+                        <field name="state"/>
+                        <field name="comment"/>
+                        <field name="content"/>
+                        <field name="action_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="dpo_request_tree" model="ir.ui.view">
+         <field name="model">hr.dpo.request</field>
+        <field name="arch" type="xml">
+            <tree name="dpo desk">
+                <field name="name"/>
+                <field name="service"/>
+                        <field name="employee"/>
+                        <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="dpo_request_form" model="ir.ui.view">
+        <field name="model">hr.dpo.treatment</field>
+        <field name="arch" type="xml">
+            <form name="Treatmant">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="state"/>
+                        <field name="action_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="" model="ir.ui.view">
+        <field name="model">hr.dpo.treatment</field>
+        <field name="arch" type="xml">
+            <tree name="Treatment">
+                <field name="name"/>
+                <field name="state"/>
+                <field name="action_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="dpo_action_form" model="ir.ui.view">
+        <field name="model">hr.dpo.action</field>
+        <field name="arch" type="xml">
+            <form name="action_form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="comment"/>
+                        <field name="period"/>
+                        <field name="state"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+ <record id="dpo_action_tree" model="ir.ui.view">
+     <field name="model">hr.dpo.action</field>
+     <field name="arch" type="xml">
+         <tree name="action_tree">
+             <field name="name"/>
+            <field name="description"/>
+            <field name="period"/>
+            <field name="state"/>
+         </tree>
+     </field>
+ </record>
+    <record id="dpo_documents_form" model="ir.ui.view">
+        <field name="model">hr.dpo.document</field>
+        <field name="arch" type="xml">
+            <form name="dpo doucument form">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="type"/>
+                        <field name="attachment_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="dpo_documents_tree" model="ir.ui.view">
+        <field name="model">hr.dpo.document</field>
+        <field name="arch" type="xml">
+            <tree name="dpo document tree">
+                <field name="name"/>
+                        <field name="description"/>
+                        <field name="type"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="hr_dpo_request_action" model="ir.actions.act_window">
+        <field name="name">Dpo Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.dpo.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+              List dpo human request from employee or to subcontractors
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK -->
+            List dpo human request from employee or to subcontractors
+
+          </p>
+        </field>
+    </record>
+
+    <record id="hr_dpo_treatment_action" model="ir.actions.act_window">
+        <field name="name">Dpo Treatment</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.dpo.treatment</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK -->
+          </p>
+        </field>
+    </record>
+
+    <record id="hr_dpo_action_action" model="ir.actions.act_window">
+        <field name="name">Dpo Action</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.dpo.action</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK -->
+          </p>
+        </field>
+    </record>
+
+    <record id="hr_dpo_documents_action" model="ir.actions.act_window">
+        <field name="name">Dpo Documents</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.dpo.document</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            <!-- Add Text Here -->
+              Store template document to be signed and signed documents <br/>
+              Create Template before store signed One
+          </p><p>
+            <!-- More details about what a user can do with this object will be OK -->
+            Store template document to be signed  and signed documents
+          </p>
+        </field>
+    </record>
+
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="hr_dpo_desk_menu" name="DPO Desk" sequence="10"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hr_dpo_request_menu" name="Request" parent="hr_dpo_desk_menu" action="hr_dpo_request_action" sequence="5"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hr_dpo_action_menu" name="Action" parent="hr_dpo_desk_menu" action="hr_dpo_action_action" sequence="6"/>
+
+    <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hr_dpo_treatment_menu" name="Treatment" parent="hr_dpo_desk_menu"
+              action="hr_dpo_treatment_action" sequence="4"/>
+  <!-- This Menu Item must have a parent and an action -->
+    <menuitem id="hr_dpo_document_menu" name="Documents" parent="hr_dpo_desk_menu"
+              action="hr_dpo_documents_action" sequence="7"/>
+
+
+</odoo>
