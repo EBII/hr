@@ -22,12 +22,13 @@ add right to some user to be DPO
 Usage
 =====
 
-with right 
-DPO user get new root menu
-list and create actions to do
-list and requests actions to close
-list and treatment actions to close
-manage and register rules documents  
+with right:
+
+* DPO user get new root menu
+* list and create actions to do
+* list, create and close requests actions
+* list, create and close treatment actions
+* manage and register rules documents  
 
 
 Known issues / Roadmap
